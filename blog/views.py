@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from blog.forms import UserRegisterForm
-from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import login,logout,authenticate
 
 
@@ -23,7 +23,7 @@ def login_request(request):
             user = authenticate(username=usuario,password=clave)
             if user is not None:
                 login(request, user)
-                return render(request, "blog/padre.html", {'mensaje':f"Bienvenido { user } a FoodReviewers"})
+                return render(request, "blog/inicio.html", {'mensaje':f'Bienvenido { user } a FoodReviewers'})
             else:
                 return render(request, "blog/login.html", {'form':form, "mensaje":"Usuario o contraseña incorrectos"})
         else:
@@ -41,7 +41,7 @@ def register(request):
             username = form.cleaned_data["username"]
 
             form.save()
-            return render(request, 'blog/padre.html', {'mensaje':f"Usuario { username } creado"})
+            return render(request, 'blog/inicio.html', {'mensaje':f"Usuario { username } creado"})
     else:
         form = UserRegisterForm()
     return render(request, 'blog/register.html', {'form':form})

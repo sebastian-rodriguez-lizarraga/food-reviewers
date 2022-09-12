@@ -9,10 +9,10 @@
 {%  endblock %}
 
 {% block contenido %}
-<h1> INICIAR SESION</h1>
-<h1>{{ mensaje }}</h1>
 
-<form action="{% url 'login' %}" method="POST"  > {% csrf_token %}
+<h2> {{ mensaje }} </h2>
+
+<form action="{% url 'login' %}" method="POST" > {% csrf_token %}
     
     {{ form.as_p }}
     
