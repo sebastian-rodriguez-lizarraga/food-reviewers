@@ -6,7 +6,7 @@ from django.contrib.auth import login,logout,authenticate
 
 
 def inicio(request):
-    return render(request, "/blog/padre.html")
+    return render(request,"blog/inicio.html")
 
 def nosotros(request):
     return render(request, "blog/acerca-de.html")

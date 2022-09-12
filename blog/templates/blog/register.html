@@ -1,3 +1,7 @@
+{% extends "blog/padre.html" %}
+
+
+
 {% load static %}
 
 {% block titulo_de_pagina %}
@@ -10,12 +14,14 @@
 
 <h1>{{ mensaje }}</h1>
 
-<form action="{% url 'register' %}" method="POST"> {% csrf_token %}
-    
-    {{ form.as_p }}
-    
-    <button type="submit">Registrarse</button>
+<div class="registerContaner">
+    <h2>-REGISTRO-</h2>
+    <form action="{% url 'register' %}" method="POST" class="form-regis"> {% csrf_token %}
+        
+        {{ form.as_p }}
+        
+        <button type="submit" class="boton-register">Registrarse</button>
 
-</form>
-
+    </form>
+</div>
 {% endblock %}
