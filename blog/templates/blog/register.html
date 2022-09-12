@@ -1,0 +1,21 @@
+{% load static %}
+
+{% block titulo_de_pagina %}
+
+<h1 class="mb-5">Registrarse!!</h1>
+
+{% endblock %}
+
+{% block contenido %}
+
+<h1>{{ mensaje }}</h1>
+
+<form action="{% url 'register' %}" method="POST"> {% csrf_token %}
+    
+    {{ form.as_p }}
+    
+    <button type="submit">Registrarse</button>
+
+</form>
+
+{% endblock %}

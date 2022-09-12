@@ -1,0 +1,39 @@
+{% extends "blog/padre.html" %}
+
+{% load static %}
+
+{%  block titulo_de_pagina %}
+
+<h1 class="mb-5">Acerca De...</h1>
+
+{%  endblock %}
+
+
+
+{% block imagen %}
+
+<!--{% static '/blog/assets/img/acerca-de-foto.jpg' %}-->
+<!--<img src="{% static 'blog/assets/img/acerca-de-foto.jpg' %}" alt="Imagen de fondo sillones">-->
+<!--background-image: url('{% static '/blog/assets/img/acerca-de-foto.jpg' %}')-->
+style="background-image: url('{% static '/blog/assets/img/acerca-de-foto.jpg' %}')"
+{% endblock %}
+
+
+{% block contenido %}
+<div class="separador-borde"> 
+    <h2 >Tomas Rivetta</h2>
+    <p>
+        Tengo 19 años, actualmente me estoy desarrollando como Full Stack Developer en el Programa ONE y
+        estoy cursando en CoderHouse el curso de Python con Django.En mis tiempos libres, practico programación💻 
+        realizando mini proyectos para poder lograr reforzar lo aprendido, amo el futbol⚽ deporte que practico actualmente, 
+        me encanta leer libros📚 sobre filosofía y los fines de semana salgo a caminar y practico Cartomagia🃏
+    </p>
+
+    <h2>Sebastian Rodriguez Lizarraga</h2>
+    <p>Estudiante de Ciencias de la computación en UBA, tengo 20 años. Quisiera seguir aprendiendo
+        y metiendome en sistemas que es algo que me encanta, hace 2 años comencé a hacer sitios web en WordPress y
+        me meti al curso de coder porque queria aprender a crear un sitio desde cero usando
+        python y django. En mis tiempos libres me gusta escuchar música.
+    </p>
+</div>  
+{% endblock %}
