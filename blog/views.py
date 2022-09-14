@@ -3,7 +3,7 @@ from django.shortcuts import render
 from blog.forms import UserRegisterForm
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import login,logout,authenticate
-
+from django.contrib.auth.decorators import login_required
 
 def inicio(request):
     return render(request,"blog/inicio.html")
@@ -11,6 +11,9 @@ def inicio(request):
 def nosotros(request):
     return render(request, "blog/acerca-de.html")
 
+@login_required
+def blog(request):
+    return render(request, "blog/blog.html")
 
 ####### LOGIN #######
 def login_request(request):
@@ -45,3 +48,6 @@ def register(request):
     else:
         form = UserRegisterForm()
     return render(request, 'blog/register.html', {'form':form})
+
+
+######## LOGOUT ##########

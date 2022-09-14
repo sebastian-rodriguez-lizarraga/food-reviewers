@@ -9,6 +9,9 @@
 }
 
 .registerContaner{
-    text-align: center;
+    text-align: start;
     background-color: aquamarine;
+    width: 50%;
+    border-radius: 20px;
+    margin-left:25%;
 }

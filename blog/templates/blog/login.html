@@ -2,17 +2,34 @@
 
 {% load static %}
 
-{%  block titulo_de_pagina %}
+{% block header %}   
+<header class="masthead" id="login">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="site-heading">
+                    <h1 class="mb-5">Iniciar sesion..</h1>
+                    
+                    <span class="subheading">Accedé a tu cuenta y hacete foodie!</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<style >
+    #login{
+        background-image: url("{% static '/blog/assets/img/fondo-login.jpg' %}");
+    }
+</style>
 
-<h1 class="mb-5">Iniciar sesion..</h1>
+{% endblock %}  
 
-{%  endblock %}
 
 {% block contenido %}
 
 <h2> {{ mensaje }} </h2>
 
-<form action="{% url 'login' %}" method="POST" > {% csrf_token %}
+<form action="{% url 'login' %}" method="POST" id="form-log"> {% csrf_token %}
     
     {{ form.as_p }}
     
